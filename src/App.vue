@@ -29,12 +29,12 @@ export default {
   methods: {
     apiCall(){
       this.loader = true;
-      axios.get( this.baseApiUrl + '/project', {
+      axios.get(this.baseApiUrl + '/project', {
         params:{
           page: this.apiPage
         }
       }).then(res => {
-        if(res.data.succes){
+        if(res.data.success){
           this.loader = false;
 
         }
@@ -43,6 +43,8 @@ export default {
       })
     }
   },
+
+  
   
 
 }
