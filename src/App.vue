@@ -29,7 +29,7 @@ export default {
   methods: {
     apiCall(){
       this.loader = true;
-      axios.get(this.baseApiUrl + '/project', {
+      axios.get(this.baseApiUrl + '/projects', {
         params:{
           page: this.apiPage
         }
@@ -43,15 +43,17 @@ export default {
       })
     }
   },
-
   
+
+
+
   
 
 }
 </script>
 
 <template>
-<div class="container py-5">
+<div class="container py-5 display-2 ">
   Progetto di gruppo
 </div>
 </template>
