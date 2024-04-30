@@ -2,22 +2,31 @@
 import AppHeader from "./components/AppHeader.vue";
 
 export default {
-  data(){
-    return{
-      componets:{
+  data() {
+    return {
 
-        AppHeader,
-
-      },
     }
-  }
+  },
+
+  components: {
+    AppHeader,
+    
+  },
+
+  mounted() {
+    
+
+  },
+
+  methods: {
+
+  },
 }
 </script>
 <template>
   <AppHeader></AppHeader>
   <router-view></router-view>
 
-  
+
 </template>
-<style>
-</style>
+<style></style>

@@ -90,7 +90,7 @@ export default {
   <div class="container ">
     <nav>
       <ul class="d-flex gap-2 ">
-        <li v-for="link in links" v-html="link.label" @click="changePage(link.label)" :class="link.label == apiPageNumber ? 'active' : ''" >
+        <li v-for="link in links" v-html="link.label" @click="changePage(link.label)" :class="link.label == page ? 'active' : ''" >
 
         </li>
       </ul>

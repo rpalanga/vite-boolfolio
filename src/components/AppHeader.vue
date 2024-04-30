@@ -7,7 +7,7 @@ export default {
     <header>
         <nav>
             <div class="container">
-                ciao tutti
+                Qui ci andrà la NavBar
             </div>
         </nav>
     </header>
