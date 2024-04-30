@@ -1,4 +1,4 @@
-<script >
+<script>
 //importo axios
 import axios from 'axios';
 
@@ -16,7 +16,7 @@ export default {
       baseApiUrl: 'http://127.0.0.1:8000/api',
 
       loader: true,
-      
+
     }
 
   },
@@ -26,7 +26,7 @@ export default {
   },
 
   methods: {
-    apiCall(){
+    apiCall() {
       this.loader = true;
       axios.get( this.baseApiUrl + '/project', {
         params:{
@@ -45,24 +45,65 @@ export default {
     }
   },
   
+  
 
 }
 </script>
 
 <template>
-<div class="container py-5 display-2 ">
-  Progetto di gruppo
-  <ul>
-    <li v-for="project in projects">
-      {{ project.name }}
-      
-    </li>
-  </ul>
+  <div class="container py-5 ">
+    Progetto di gruppo
+    <ul>
+      <li v-for="project in projects">
+        {{ project.name }}
 
-  
-</div>
+      </li>
+      <li v-for="project in projects">
+        {{ project.type.description }}
+
+      </li>
+    </ul>
+
+
+  </div>
+  <div class="container ">
+    <nav>
+      <ul class="d-flex gap-2 text-white">
+        
+        <li v-for="apiLink in apiLinks" v-html="link.label" @click="changePage(link.label)"
+          :class="link.label == apiPage ? 'active' : ''">
+
+        </li>
+      </ul>
+    </nav>
+  </div>
+
 </template>
 
-<style >
+<style lang="scss">
+nav {
+  ul {
 
-</style>
+    list-style-type: none;
+
+    li {
+
+      padding: 8px;
+
+      text-decoration: none;
+      color: white;
+
+      transition: all .3s ease;
+
+      cursor: pointer;
+
+      &:hover,
+      &.active {
+        background-color: rgba(255, 255, 255, 0.4);
+        color: white;
+      }
+
+    }
+  }
+}
+  </style>
