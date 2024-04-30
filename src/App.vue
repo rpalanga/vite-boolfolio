@@ -6,14 +6,19 @@ export default {
   data() {
     return {
 
-      projects: [],
-
-      apiLink: [],
-      
-      apiLink: [],
-      apiPage: 1,
-
-      baseApiUrl: 'http://127.0.0.1:8000/api',
+      projects : [],
+       
+       // creo link ai avri endpoiint dell'api per vedere le pagine dei posts
+      links : [],
+ 
+      //creo una variabile per le pagine
+      page: [],
+ 
+       //variabile per il loading
+       isLoading : true,
+ 
+       // salvo l'indirizzo principale in una variabile
+      baseApiUrl : 'http://127.0.0.1:8000/api',
 
       loader: true,
       
@@ -22,35 +27,52 @@ export default {
   },
 
   mounted() {
-   this.apiCall()
-    
+    this.apiCall();
   },
 
   methods: {
-    apiCall(){
-      this.loader = true;
-      axios.get( this.baseApiUrl + '/project', {
-        params:{
-          page: this.apiPage
-        }
-      }).then(res => {
-        if(res.data.succes){
-          this.loader = false;
+    apiCall() {
+      console.log(this.baseApiUrl);
 
-        }
+    axios.get(this.baseApiUrl + '/projects' , {
+      params: {
+        page: this.page
+      }
+      }).then(res => {
+        console.log(res);
+        // salvo il posts
         this.projects = res.data.results.data;
-        this.apiLink = res.data.results.links;
+        
+        //salvo i link
+        this.links = res.data.results.links;
       })
-    }
+    },
+    changePage(numberPage){
+    //console.log(numberPage)
+
+    this.page = numberPage;
+
+    //una volta che ho lo stesso numero della pagina rifaccio la chimta api
+    this.apiCall();
+    },
   },
+    
   
+      
 
 }
 </script>
 
 <template>
 <div class="container py-5">
-  Progetto di gruppo
+  <h1>Progetto di : Roberto, Luca & Gian Marco</h1>
+</div>
+<div class="container py-5">
+  <ul>
+    <li v-for="project in projects">
+      {{ project.title }}
+    </li>
+  </ul>
 </div>
 </template>
 
