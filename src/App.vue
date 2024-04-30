@@ -1,30 +1,68 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
+<script >
+//importo axios
+import axios from 'axios';
+
+export default {
+  data() {
+    return {
+
+      projects: [],
+
+      apiLink: [],
+      
+      apiLink: [],
+      apiPage: 1,
+
+      baseApiUrl: 'http://127.0.0.1:8000/api',
+
+      loader: true,
+      
+    }
+
+  },
+
+  mounted() {
+    this.apiCall();
+  },
+
+  methods: {
+    apiCall(){
+      this.loader = true;
+      axios.get( this.baseApiUrl + '/project', {
+        params:{
+          page: this.apiPage
+        }
+      }).then(res => {
+        if(res.data.succes){
+          this.loader = false;
+
+        }
+        this.projects = res.data.results.data;
+        
+        //salvo i link
+        this.links = res.data.results.links;
+      })
+    }
+  },
+  
+
+}
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+<div class="container py-5 display-2 ">
+  Progetto di gruppo
+  <ul>
+    <li v-for="project in projects">
+      {{ project.name }}
+      
+    </li>
+  </ul>
+
+  
+</div>
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+<style >
+
 </style>
