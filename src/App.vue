@@ -28,7 +28,7 @@ export default {
   methods: {
     apiCall() {
       this.loader = true;
-      axios.get( this.baseApiUrl + '/project', {
+      axios.get( this.baseApiUrl + '/projects', {
         params:{
           page: this.apiPage
         }
@@ -44,7 +44,14 @@ export default {
       })
     }
   },
-  
+  changePage(numberPage){
+    //console.log(numberPage)
+
+    this.page = numberPage;
+
+    //una volta che ho lo stesso numero della pagina rifaccio la chimta api
+    this.apiCall();
+    },
   
 
 }
@@ -70,7 +77,7 @@ export default {
     <nav>
       <ul class="d-flex gap-2 text-white">
         
-        <li v-for="apiLink in apiLinks" v-html="link.label" @click="changePage(link.label)"
+        <li v-for="link in links" v-html="link.label" @click="changePage(link.label)"
           :class="link.label == apiPage ? 'active' : ''">
 
         </li>
