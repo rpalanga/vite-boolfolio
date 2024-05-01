@@ -82,6 +82,7 @@ export default {
     <ul>
       <li v-for="project in projects">
         {{ project.name }} 
+        <router-link :to="{ name: 'single-project' }" class="btn btn-outline-info btn-outline"> Mostra</router-link>
 
       </li>
     </ul>
@@ -89,8 +90,13 @@ export default {
 
   <div class="container ">
     <nav>
-      <ul class="d-flex gap-2 ">
-        <li v-for="link in links" v-html="link.label" @click="changePage(link.label)" :class="link.label == page ? 'active' : ''" >
+      <ul class="d-flex gap-2">
+        <li 
+        v-for="link in links" 
+        v-html="link.label" 
+        @click="changePage(link.label)" 
+        class="mb-4"
+        :class="link.label == page ? 'active' : ''" >
 
         </li>
       </ul>

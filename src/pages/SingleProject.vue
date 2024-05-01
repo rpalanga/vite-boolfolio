@@ -1,4 +1,3 @@
-
 <script>
 
 
@@ -17,7 +16,7 @@ export default {
     },
 
     mounted() {
-       console.log(this.$route)
+        console.log(axios);
         axios.get(this.baseApiUrl + '/projects/11').then(res=> {
 
             console.log(res.data.project);
