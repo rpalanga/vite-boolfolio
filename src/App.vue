@@ -28,7 +28,7 @@ export default {
   methods: {
     apiCall(){
       this.loader = true;
-      axios.get( this.baseApiUrl + '/project', {
+      axios.get( this.baseApiUrl + '/projects', {
         params:{
           page: this.apiPage
         }
