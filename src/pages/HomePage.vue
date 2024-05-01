@@ -82,7 +82,7 @@ export default {
     <ul>
       <li v-for="project in projects">
         {{ project.name }} 
-        <router-link :to="{ name: 'single-project' }" class="btn btn-outline-info btn-outline"> Mostra</router-link>
+        <router-link :to="{ name: 'single-project', params : {slug:project.slug }}" class="btn btn-outline-info btn-outline"> Mostra</router-link>
 
       </li>
     </ul>
