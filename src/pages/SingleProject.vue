@@ -16,11 +16,20 @@ export default {
     },
 
     mounted() {
-        console.log(axios);
-        axios.get(this.baseApiUrl + '/projects/11').then(res=> {
+       // console.log(this.$route.params.id);
+       // this.postId = this.$route.params.id;
+       this.postSLug = this.$route.params.slug;
+        axios.get(this.baseApiUrl + '/projects/' + this.postSlug).then(res=> {
 
-            console.log(res.data.project);
-            this.post = res.data.project;
+           // console.log(res.data.project);
+
+           if(res.data.success){
+            // se c'è il post
+               this.post = res.data.project;
+           } else {
+            // torno alla pagina iniziale
+            this.$router.push({ name: 'home' })
+           }
         });
     },
 
