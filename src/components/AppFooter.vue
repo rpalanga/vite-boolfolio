@@ -12,7 +12,7 @@ export default {
 
 
             <div class="">
-                <img src="./src/assets/reactor-games.png" alt="">
+                <img src="/src/assets/images/reactor-games.png" alt="">
                 <h5 class="">Special title treatment</h5>
                 <p class="">With supporting text below as a natural lead-in to additional content.</p>
                 <a href="#" class="btn primary-btn ">Go somewhere</a>
