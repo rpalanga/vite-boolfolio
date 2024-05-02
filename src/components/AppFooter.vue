@@ -8,14 +8,14 @@ export default {
 <template>
     <footer class="text-center p-0">
         <hr class="">
-        <div class="d-flex justify-content-around gap-5 p-3">
+        <div class="d-flex justify-content-around gap-5 pt-5 pb-5 px-3">
 
 
-            <div class="">
+            <div class="d-flex flex-column align-items-start">
                 <img src="/src/assets/images/reactor-games.png" alt="">
-                <h5 class="">Special title treatment</h5>
-                <p class="">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn primary-btn ">Go somewhere</a>
+                <h5 class="pt-2">Reactor games</h5>
+                <p class="">We are always happy to develope your ideas.</p>
+                <a href="#" class="btn primary-btn ">estimate</a>
             </div>
 
             <div class="d-flex flex-column">
@@ -79,24 +79,28 @@ export default {
             </div>
 
         </div>
-        <hr>
-        <div class="">
-            Portfolio created by
-            <span class="badge rounded-pill text-bg-success">
-                <a href="https://github.com/rpalanga">Roberto</a>
-            </span>
-            <span class="badge rounded-pill text-bg-danger">
-                <a href="https://github.com/GianMarcoPimentel">Gian Marco</a>
-            </span>
-            <span class="badge rounded-pill text-bg-warning">
-                <a href="https://github.com/lucafagiolini">Luca</a>
-            </span>
+
+        <div class="d-flex justify-content-center pb-5 pt-5 pb-5 developers-pills gap-2">
+            <div>
+                Portfolio created by
+            </div>
+            <div class="d-flex gap-2">
+                <span class="badge rounded-pill">
+                    <a href="https://github.com/rpalanga">Roberto</a>
+                </span>
+                <span class="badge rounded-pill">
+                    <a href="https://github.com/GianMarcoPimentel">Gian Marco</a>
+                </span>
+                <span class="badge rounded-pill">
+                    <a href="https://github.com/lucafagiolini">Luca</a>
+                </span>
+            </div>
         </div>
-        <hr>
-        <div class="card-footer text-body-secondary">
+
+        <div class="d-flex justify-content-center p-4">
             Boolean class 118
         </div>
-        <hr>
+        <hr class="m-0">
     </footer>
 
 </template>
@@ -113,12 +117,35 @@ footer {
 
     img {
         height: 100px;
-        width: 100px;
-
     }
 
     .primary-btn {
         @include primary_button_style;
+    }
+
+
+    .developers-pills {
+        background-color: $primary_color;
+        color: white;
+        font-size: 1rem;
+        font-weight: 500;
+
+        span {
+
+            width: 150px;
+
+            @include secondary_button_style;
+
+            a {
+                text-decoration: none;
+                color: $secondary_color;
+
+                &:hover {
+                    color: white;
+                }
+
+            }
+        }
     }
 }
 </style>
