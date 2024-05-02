@@ -4,7 +4,7 @@
 import axios from 'axios';
 
 export default {
-    name:'HomePage',
+  name: 'HomePage',
   data() {
 
     return {
@@ -76,7 +76,7 @@ export default {
         this.links = this.links.filter(link => {
           //console.log(link)
           // i link relativi contengono un html special char che contiene la stringa "aquo"
-           return ! link.label.includes('aquo')
+          return !link.label.includes('aquo')
         })
 
 
@@ -94,33 +94,35 @@ export default {
 }
 </script>
 <template>
-  <div class="container py-5">
-    
+  <div id="my-container">
 
-    <ul>
-      <li v-for="project in projects">
-        {{ project.name }} 
-        <br>
-        
-        <router-link :to="{ name: 'single-project', params : {slug:project.slug }}" class="btn btn-outline-info btn-outline"> Mostra</router-link> 
+    <div class="container py-5 d-flex gap-3 justify-content-center" >
 
-      </li>
-    </ul>
-  </div>
+      <div class="card" style="width: 18rem;" v-for="project in projects">
+        <img :src=" 'http://localhost:8000/storage/'  + project.image " class=" w-100 card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{ project.name }} </h5>
+          <p class="card-text">{{ project.description }}</p>
+            <router-link :to="{ name: 'single-project', params: { slug: project.slug } }"
+        class="btn btn-outline-info btn-outline"> Mostra</router-link>
+        </div>
+      </div>
 
-  <div class="container ">
-    <nav>
-      <ul class="d-flex gap-2">
-        <li 
-        v-for="link in links" 
-        v-html="link.label" 
-        @click="changePage(link.label)" 
-        class="mb-4"
-        :class="link.label == page ? 'active' : ''" >
+      
 
-        </li>
-      </ul>
-    </nav>
+
+    </div>
+
+    <div class="container ">
+      <nav>
+        <ul class="d-flex gap-2">
+          <li v-for="link in links" v-html="link.label" @click="changePage(link.label)" class="mb-4"
+            :class="link.label == page ? 'active' : ''">
+
+          </li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </template>
 
