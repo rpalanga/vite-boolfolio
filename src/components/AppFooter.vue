@@ -100,7 +100,6 @@ export default {
         <div class="d-flex justify-content-center p-4">
             Boolean class 118
         </div>
-        <hr class="m-0">
     </footer>
 
 </template>
