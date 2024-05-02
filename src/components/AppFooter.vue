@@ -6,15 +6,16 @@ export default {
 
 
 <template>
-    <div class="text-center bg-body-tertiary p-0">
+    <footer class="text-center p-0">
         <hr class="">
-        <div class="d-flex justify-content-around gap-5 bg-body-tertiary p-3">
+        <div class="d-flex justify-content-around gap-5 p-3">
 
 
             <div class="">
+                <img src="./src/assets/reactor-games.png" alt="">
                 <h5 class="">Special title treatment</h5>
                 <p class="">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <a href="#" class="btn primary-btn ">Go somewhere</a>
             </div>
 
             <div class="d-flex flex-column">
@@ -82,13 +83,13 @@ export default {
         <div class="">
             Portfolio created by
             <span class="badge rounded-pill text-bg-success">
-                <a href="">Roberto</a>
+                <a href="https://github.com/rpalanga">Roberto</a>
             </span>
             <span class="badge rounded-pill text-bg-danger">
-                <a href="">Gian Marco</a>
+                <a href="https://github.com/GianMarcoPimentel">Gian Marco</a>
             </span>
             <span class="badge rounded-pill text-bg-warning">
-                <a href="">Luca</a>
+                <a href="https://github.com/lucafagiolini">Luca</a>
             </span>
         </div>
         <hr>
@@ -96,9 +97,28 @@ export default {
             Boolean class 118
         </div>
         <hr>
-    </div>
+    </footer>
 
 </template>
 
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+@use "/src/variabiles.scss" as *;
+@use "/src/mixins.scss" as *;
+
+footer {
+
+
+    background-color: $secondary_color;
+
+    img {
+        height: 100px;
+        width: 100px;
+
+    }
+
+    .primary-btn {
+        @include primary_button_style;
+    }
+}
+</style>
