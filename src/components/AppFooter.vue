@@ -6,9 +6,9 @@ export default {
 
 
 <template>
-    <div class="text-center container">
-        <hr>
-        <div class="d-flex gap-5">
+    <div class="text-center bg-body-tertiary p-0">
+        <hr class="">
+        <div class="d-flex justify-content-around gap-5 bg-body-tertiary p-3">
 
 
             <div class="">
@@ -38,7 +38,42 @@ export default {
             </div>
 
             <div>
-                <h5>get in touch</h5>
+                <h5>Get in touch</h5>
+                <div class="d-flex gap-3">
+                    <span>
+                        <a href="">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                    </span>
+                    <span>
+                        <a href="">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                    </span>
+                    <span>
+                        <a href="">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </span>
+                </div>
+            </div>
+
+            <div class="d-flex flex-column align-items-lg-start">
+                <div>
+                    <h5>Subscribe</h5>
+                </div>
+                <form>
+                    <div class="d-flex flex-column align-items-lg-start b-3">
+                        <label for="exampleInputEmail1" class="form-label"></label>
+                        <input type="email" class="form-control" id="exampleInputEmail1"
+                            placeholder="enter email adress" aria-describedby="emailHelp">
+                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                </form>
+
+            </div>
+
+            <div>
 
             </div>
 
@@ -60,6 +95,7 @@ export default {
         <div class="card-footer text-body-secondary">
             Boolean class 118
         </div>
+        <hr>
     </div>
 
 </template>
