@@ -94,12 +94,12 @@ export default {
 }
 </script>
 <template>
-  <div id="my-container">
+  <div id="my-container" class="p-0 m-0">
 
     <div class="container py-5 d-flex gap-3 justify-content-center" >
 
-      <div class="card" style="width: 18rem;" v-for="project in projects">
-        <img :src=" 'http://localhost:8000/storage/'  + project.image " class=" w-100 card-img-top" alt="...">
+      <div class="card col-2 p-0" style="width: 18rem;" v-for="project in projects">
+        <img :src=" 'http://localhost:8000/storage/'  + project.image " class=" card-img-top object-fit-cover" style="height: 300px; object-position: top; " alt="...">
         <div class="card-body">
           <h5 class="card-title">{{ project.name }} </h5>
           <p class="card-text">{{ project.description }}</p>
@@ -127,6 +127,15 @@ export default {
 </template>
 
 <style lang="scss">
+#my-container{
+  background-image: url("./back-image/ruvim-noga-pazM9TQJ2Ck-unsplash.jpg");
+  background-position: center;
+  object-fit: cover;
+  
+  
+
+  
+}
 nav {
   ul {
 
@@ -152,4 +161,5 @@ nav {
     }
   }
 }
+
 </style>
