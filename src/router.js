@@ -16,11 +16,11 @@ const router = createRouter({
             name: 'home',
             component: HomePage
         }, 
-        {
-             path:  '/projects/:id',
-             name: 'single-project',
-             component: SingleProject
-         },
+        // {
+        //      path:  '/projects/:id',
+        //      name: 'single-project',
+        //      component: SingleProject
+        //  },
          {
             path:  '/projects/:slug',
             name: 'single-project',

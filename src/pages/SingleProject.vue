@@ -10,6 +10,7 @@ export default {
         return {
 
             post : null,
+            postSlug: '',
 
             baseApiUrl: 'http://127.0.0.1:8000/api',
         } 
@@ -18,7 +19,9 @@ export default {
     mounted() {
        // console.log(this.$route.params.id);
        // this.postId = this.$route.params.id;
-       this.postSLug = this.$route.params.slug;
+       this.postSlug = this.$route.params.slug;
+
+       console.log('chiamata api:', this.baseApiUrl + '/projects/' + this.postSlug)
         axios.get(this.baseApiUrl + '/projects/' + this.postSlug).then(res=> {
 
            // console.log(res.data.project);

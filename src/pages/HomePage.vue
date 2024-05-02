@@ -45,6 +45,15 @@ export default {
     // racchiudo tutta la chiamata api 
     //richaimando la funzione dhe ho scritto nei methods
     this.apicall();
+
+    // this.links = this.links.forEach(link => {
+    //   console.log(links)
+    //   // return link.label.includes(';')
+    // })
+
+
+    console.log(this.projects)
+
   },
 
   methods: {
@@ -62,6 +71,15 @@ export default {
 
         //salvo i link
         this.links = res.data.results.links;
+
+        // rimuoviamo i link relativi next e prev
+        this.links = this.links.filter(link => {
+          //console.log(link)
+          // i link relativi contengono un html special char che contiene la stringa "aquo"
+           return ! link.label.includes('aquo')
+        })
+
+
       })
     },
     changePage(numberPage) {
@@ -82,7 +100,9 @@ export default {
     <ul>
       <li v-for="project in projects">
         {{ project.name }} 
-        <router-link :to="{ name: 'single-project', params : {slug:project.slug }}" class="btn btn-outline-info btn-outline"> Mostra</router-link>
+        <br>
+        
+        <router-link :to="{ name: 'single-project', params : {slug:project.slug }}" class="btn btn-outline-info btn-outline"> Mostra</router-link> 
 
       </li>
     </ul>
