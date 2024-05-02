@@ -50,7 +50,7 @@ export default {
     class="container d-flex justify-content-center"> 
        
        <div class="card col-12 my-4" style="width: 500px;height: 550px;">
-        <img :src=" 'http://localhost:8000/storage/'  + project.image " class=" card-img-top object-fit-cover" style="height: 300px; object-position: top; " alt="...">
+        <img :src=" 'http://localhost:8000/storage/'  + project.image " class=" card-img-top object-fit-cover w-100 overflow-hidden" alt="...">
         <div class="card-body">
           <h5 class="card-title">{{ project.name }} </h5>
           <p class="card-text">{{ project.description }}</p>
