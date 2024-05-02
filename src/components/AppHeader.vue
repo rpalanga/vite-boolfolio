@@ -1,6 +1,6 @@
 <script>
 export default {
-   name:'AppHeader',
+    name: 'AppHeader',
 }
 </script>
 <template>
@@ -11,8 +11,6 @@ export default {
             </div>
         </nav>
     </header>
-    
-</template>
-<style>
 
-</style>
+</template>
+<style></style>

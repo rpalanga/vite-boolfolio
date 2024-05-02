@@ -1,0 +1,31 @@
+@mixin primary_button_style {
+    border: none;
+    padding: 0.4rem 1.4rem 0.4rem 1.4rem;
+    text-transform: uppercase;
+
+    background-color: #ffffff;
+    color: #6b6b6b;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+        background-color: #b81c68;
+        color: white;
+    }
+}
+
+@mixin secondary_button_style {
+    border: none;
+    padding: 0.4rem 1.4rem 0.4rem 1.4rem;
+    text-transform: uppercase;
+
+    background-color: white;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+        background-color: #b81c68;
+        color: white;
+    }
+}
