@@ -115,7 +115,7 @@ export default {
 
     <div class="container ">
       <nav>
-        <ul class="d-flex gap-2">
+        <ul class="d-flex gap-2 m-0 p-0">
           <li v-for="link in links" v-html="link.label" @click="changePage(link.label)" class="mb-4"
             :class="link.label == page ? 'active' : ''">
 

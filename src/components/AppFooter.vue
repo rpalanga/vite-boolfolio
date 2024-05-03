@@ -7,7 +7,7 @@ export default {
 
 <template>
     <footer class="text-center p-0">
-        <hr class="">
+        <!-- <hr class=""> -->
         <div class="d-flex justify-content-around gap-5 pt-5 pb-5 px-3">
 
 
