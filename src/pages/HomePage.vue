@@ -96,19 +96,20 @@ export default {
 <template>
   <div id="my-container" class="p-0 m-0">
 
-    <div class="container py-5 d-flex gap-3 justify-content-center" >
+    <div class="container py-5 d-flex gap-3 justify-content-center">
 
       <div class="card col-2 p-0" style="width: 18rem;" v-for="project in projects">
-        <img :src=" 'http://localhost:8000/storage/'  + project.image " class=" card-img-top object-fit-cover" style="height: 300px; object-position: top; " alt="...">
+        <img :src="'http://localhost:8000/storage/' + project.image" class=" card-img-top object-fit-cover"
+          style="height: 300px; object-position: top; " alt="...">
         <div class="card-body">
           <h5 class="card-title">{{ project.name }} </h5>
           <p class="card-text">{{ project.description }}</p>
-            <router-link :to="{ name: 'single-project', params: { slug: project.slug } }"
-        class="btn btn-outline-info btn-outline"> Mostra</router-link>
+          <router-link :to="{ name: 'single-project', params: { slug: project.slug } }"
+            class="btn btn-outline-info btn-outline"> Mostra</router-link>
         </div>
       </div>
 
-      
+
 
 
     </div>
@@ -127,15 +128,21 @@ export default {
 </template>
 
 <style lang="scss">
-#my-container{
-  background-image: url("./back-image/ruvim-noga-pazM9TQJ2Ck-unsplash.jpg");
+@use "/src/variabiles.scss" as *;
+@use "/src/mixins.scss" as *;
+
+#my-container {
+  // background-image: url("./back-image/ruvim-noga-pazM9TQJ2Ck-unsplash.jpg");
   background-position: center;
   object-fit: cover;
-  
-  
 
-  
+  background-color: $tertiary_color;
+
+
+
+
 }
+
 nav {
   ul {
 
@@ -161,5 +168,4 @@ nav {
     }
   }
 }
-
 </style>
