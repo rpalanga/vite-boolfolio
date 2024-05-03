@@ -8,9 +8,13 @@ export default {
 }
 </script>
 <template>
-    <h1>BenVenuto Nell'area Collaborazioni</h1>
-    <p>Per richiedere Informazioni non esitare a contattarci</p>
-    <ContactForm></ContactForm>
+    <div class="container my-4">
+        <h1>Benvenuto Nell'area Collaborazioni</h1>
+        <p>Per richiedere Informazioni non esitare a contattarci</p>
+        <ContactForm></ContactForm>
+
+    </div>
+
 
     
 </template>

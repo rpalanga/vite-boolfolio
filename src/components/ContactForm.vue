@@ -8,11 +8,11 @@ export default {
         return {
             formData: {
                 name: '',
-                adress: '',
+                address: '',
                 message: '',
 
 
-            }
+            },
 
         }
     },
@@ -21,9 +21,10 @@ export default {
     },
     methods: {
         keepInTouch() {
-            axios.post('http://127.0.0.1:8000/api/new-contact' + this.formData).then(res =>
+            axios.post('http://127.0.0.1:8000/api/new-contact', this.formData).then(res =>{
+
                 console.log('Vediamo che ne esce:', res)
-            )
+            })
         }
     }
 
