@@ -26,16 +26,10 @@ export default {
         </nav>
            
     </header>
-<<<<<<< HEAD
-
-</template>
-<style></style>
-=======
     
 </template>
-<style>
+<style lang="scss" scoped>
 img{
     object-fit: cover;
     }
 </style>
->>>>>>> origin/feat-header
