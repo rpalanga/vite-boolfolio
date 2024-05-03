@@ -26,11 +26,6 @@ export default {
         </nav>
            
     </header>
-<<<<<<< HEAD
-
-</template>
-<style></style>
-=======
     
 </template>
 <style>
@@ -38,4 +33,3 @@ img{
     object-fit: cover;
     }
 </style>
->>>>>>> origin/feat-header
