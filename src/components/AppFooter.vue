@@ -1,6 +1,7 @@
 <script>
 export default {
     name: "Appfooter",
+
 };
 </script>
 
@@ -15,7 +16,13 @@ export default {
                 <img src="/src/assets/images/reactor-games.png" alt="">
                 <h5 class="pt-2">Reactor games</h5>
                 <p class="">We are always happy to develope your ideas.</p>
-                <a href="#" class="btn primary-btn ">estimate</a>
+
+
+                <router-link class="btn primary-btn " :to="{ name: 'contact-us' }">
+                    contact us
+                </router-link>
+
+
             </div>
 
             <div class="d-flex flex-column">
