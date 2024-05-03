@@ -1,6 +1,7 @@
 <script>
 import AppHeader from "./components/AppHeader.vue";
 import AppFooter from "./components/AppFooter.vue";
+import AppJumbotron from "./components/AppJumbotron.vue";
 
 export default {
   data() {
@@ -12,11 +13,12 @@ export default {
   components: {
     AppHeader,
     AppFooter,
-    
+    AppJumbotron,
+
   },
 
   mounted() {
-    
+
 
   },
 
@@ -27,6 +29,7 @@ export default {
 </script>
 <template>
   <AppHeader></AppHeader>
+  <AppJumbotron></AppJumbotron>
   <router-view></router-view>
   <AppFooter></AppFooter>
 
